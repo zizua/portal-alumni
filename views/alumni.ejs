@@ -1,0 +1,135 @@
+<!-- Header Start -->
+<div class="container-fluid bg-dark py-5 mb-5 page-header">
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-10 text-center">
+        <h1 class="display-3 text-white animated slideInDown">Alumni</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Header End -->
+
+
+
+    <!-- coba card 2 start-->
+    <div class="container-xxl py-5 mt-20">
+      <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+        <h6 class="section-title bg-white text-center text-orange px-3">Alumni</h6>
+        <h1 class="mb-5">Alumni Hall Of Fame</h1>
+      </div>
+      <!-- Fitur Pencarian Start-->
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6 mx-auto">
+        <!-- Tambahkan kelas mx-auto di sini -->
+        <form id="searchForm" class="d-flex align-items-center">
+          <div class="form-group mr-2">
+            <input type="text" class="form-control" id="searchName" placeholder="Cari Nama Alumni: Fulan, etc.." style="width: 500px" />
+          </div>
+          <button type="submit" class="btn btn-dark">Cari</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- Fitur Pencarian End-->
+      <div class="container-fluid py-5 mb-5">
+        <div class="row justify-content-center">
+          <% alumnis.forEach((alumni, i) => { %>
+          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="team-item bg-light">
+              <div class="overflow-hidden">
+                <img class="img-fluid" src="/img/<%= alumni.foto %>" alt="" />
+              </div>
+              <div class="position-relative d-flex justify-content-center" style="margin-top: -23px">
+                <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                  <a class="btn btn-sm-square btn-dark mx-1" href="<%= alumni.kontak1 %>"><i class="fab fa-linkedin"></i></a>
+                  <a class="btn btn-sm-square btn-dark mx-1" href="<%= alumni.kontak2 %>"><i class="fab fa-instagram"></i></a>
+                  <a class="btn btn-sm-square btn-dark mx-1" href="<%= alumni.kontak3 %>"><i class="fab fa-github"></i></a>
+                </div>
+              </div>
+              <div class="text-center p-4">
+                <h5 class="mb-0"><%= alumni.nama %></h5>
+                <small><%= alumni.programStudi %></small> |
+                <small><%= alumni.tahunLulus %></small> <br>
+                <a href="alumni/<%= alumni.nama %>" class="btn btn-danger badge rounded-pill"><i class="bi bi-info-circle"></i> detail</a>
+              </div>
+            </div>
+          </div>
+          <% }) %>
+        </div>
+      </div>
+    </div>
+    <!-- coba card 2 end-->
+    <div class="container text-center" style="margin-top: -5rem; margin-bottom: 5rem;">
+      <a href="/alumni/add" class="btn btn-warning mb-3">Tambah Data Alumni</a>
+  </div>
+       
+
+        <!-- Gallery Start -->
+        <div class="container">
+          <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title bg-white text-center text-blue px-3">Gallery</h6>
+            <h1 class="mb-5">Moment Of Alumni</h1>
+          </div>
+        <div class="container">
+          <div class="row">
+              <div class="col-md-4">
+                  <img src="img/alumni-1.png" alt="Foto 1" class="gallery-img">
+              </div>
+              <div class="col-md-4">
+                  <img src="img/alumni-2.jpg" alt="Foto 2" class="gallery-img">
+              </div>
+              <div class="col-md-4">
+                  <img src="img/alumni-3.jpg" alt="Foto 3" class="gallery-img">
+              </div>
+              <div class="col-md-4">
+                  <img src="img/alumni-4.jpg" alt="Foto 3" class="gallery-img">
+              </div>
+              <div class="col-md-4">
+                  <img src="img/alumni-1.png" alt="Foto 1" class="gallery-img">
+              </div>
+              <div class="col-md-4">
+                <img src="img/alumni-2.jpg" alt="Foto 2" class="gallery-img">
+              </div>
+              <div class="col-md-4">
+                <img src="img/alumni-3.jpg" alt="Foto 3" class="gallery-img">
+              </div>
+              <div class="col-md-4">
+                <img src="img/alumni-4.jpg" alt="Foto 3" class="gallery-img">
+              </div>
+              <div class="col-md-4">
+                  <img src="img/alumni-1.png" alt="Foto 1" class="gallery-img">
+              </div>
+          </div>
+      </div>
+        <!-- Gallery End -->
+
+
+        <!-- Footer Start -->
+        <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+          <div class="container py-5">
+          
+            <div class="col-lg-10 col-md-3">
+              <h4 class="text-white mb-3">Contact</h4>
+              <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Campus A: Jl. Situ Indah no.116, Cimanggis, Depok</p>
+              <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Campus B: Jl. Raya Lenteng Agung No.20, Jagakarsa</p>
+              <p class="mb-2"><i class="fa fa-phone-alt me-3"></i> 021 - 786 3191</p>
+              <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@nurulfikri.ac.id</p>
+              <div class="d-flex pt-2">
+                <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+            <!-- Footer End -->
+
+            <!-- Back to Top -->
+            <a href="#" class="btn btn-lg btn-dark btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

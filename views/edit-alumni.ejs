@@ -1,0 +1,74 @@
+<!-- Form Add Data Beasiswa Start -->
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Form Ubah Data Alumni</h2>
+
+      <% if (typeof errors != 'undefined') { %>
+      <div class="alert alert-info" role="alert">
+        <ul>
+          <% errors.forEach(error => { %>
+          <li><%= error.msg %></li>
+          <% }) %>
+        </ul>
+      </div>
+      <% } %>
+
+      <form method="post" action="/alumni?_method=PUT">
+        <input type="hidden" name="_id" value="<%= alumni._id  %>" />
+        <input type="hidden" name="oldNama" value="<%= alumni.oldNama || alumni.nama %>" />
+        <div class="mb-3">
+          <label for="nama" class="form-label">Nama</label>
+          <input type="text" class="form-control" id="nama" name="nama" required value="<%= alumni.nama %>" />
+        </div>
+        <div class="mb-3">
+          <label for="nim" class="form-label">NIM</label>
+          <input type="nim" class="form-control" id="nim" name="nim" required value="<%= alumni.nim %>" />
+        </div>
+        <div class="mb-3">
+          <label for="programStudi" class="form-label">Program Studi</label>
+          <!-- <input type="text" class="form-control" id="programStudi" name="programStudi" required /> -->
+          <select name="programStudi" class="form-control" id="programStudi" name="programStudi" required>
+            <option value="">- Pilih Salah Satu</option>
+            <option value="Teknik Informatika">Teknik Informatika</option>
+            <option value="Sistem Informasi">Sistem Informasi</option>
+            <option value="Bisnis Digital">Bisnis Digital</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="tahunLulus" class="form-label">Tahun Lulus</label>
+          <input type="text" class="form-control" id="tahunLulus" name="tahunLulus" placeholder="" required />
+        </div>
+        <div class="mb-3">
+          <label for="judulTA" class="form-label">Judul TA</label>
+          <input type="text" class="form-control" id="judulTA" name="judulTA" placeholder="Judul TA selama masa studi di STT NF" required />
+        </div>
+        <div class="mb-3">
+          <label for="jenjangKarir" class="form-label">Jenjang Karir</label>
+          <input type="text" class="form-control" id="jenjangKarir" name="jenjangKarir" placeholder="Jenjang Karir Setelah Lulus" required />
+        </div>
+        <div class="mb-3">
+          <label for="kontak1" class="form-label">Kontak LinkedIn</label>
+          <input type="text" class="form-control" id="kontak1" name="kontak1" placeholder="Link LinkedIn" value="<%= alumni.kontak1 %>" required />
+        </div>
+        <div class="mb-3">
+          <label for="kontak2" class="form-label">Kontak Instagram</label>
+          <input type="text" class="form-control" id="kontak2" name="kontak2" placeholder="Link Instagram" value="<%= alumni.kontak2 %>" required />
+        </div>
+        <div class="mb-3">
+          <label for="kontak3" class="form-label">Kontak GitHub</label>
+          <input type="text" class="form-control" id="kontak3" name="kontak3" placeholder="Link GitHub" value="<%= alumni.kontak3 %>" required />
+        </div>
+        
+        <div class="mb-3">
+          <label for="foto" class="form-label">Foto</label>
+          <input type="file" class="form-control" id="foto" name="foto" required />
+        </div>
+
+        <button type="submit" class="btn btn-warning">Ubah Data Alumni</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+

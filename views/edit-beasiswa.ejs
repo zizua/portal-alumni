@@ -1,0 +1,64 @@
+<!-- Form Add Data Beasiswa Start -->
+<div class="container mt-3">
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Form Ubah Data Beasiswa</h2>
+  
+        <% if (typeof errors != 'undefined') { %>
+        <div class="alert alert-info" role="alert">
+          <ul>
+            <% errors.forEach(error => { %>
+            <li><%= error.msg %></li>
+            <% }) %>
+          </ul>
+        </div>
+        <% } %>
+  
+        <form method="post" action="/beasiswa?_method=PUT">
+            <input type="hidden" name="_id" value="<%= beasiswa._id  %>" />
+            <input type="hidden" name="oldNamaBeasiswa" value="<%= beasiswa.oldNamaBeasiswa || beasiswa.namaBeasiswa %>" />
+          <div class="mb-3">
+            <label for="namaBeasiswa" class="form-label">Nama Beasiswa</label>
+            <input type="text" class="form-control" id="namaBeasiswa" name="namaBeasiswa" required />
+          </div>
+          <div class="mb-3">
+            <label for="jenjang" class="form-label">Jenjang</label>
+            <!-- <input type="text" class="form-control" id="jenjang" name="jenjang" required /> -->
+            <select name="jenjang" class="form-control" id="jenjang" name="jenjang" required>
+                <option value="">- Pilih Salah Satu</option>
+                <option value="S1">S1</option>
+                <option value="S2 Dalam Negeri">S2 Dalam Negeri</option>
+                <option value="S2 Luar Negeri">S2 Luar Negeri</option>
+                <option value="S3 Dalam Negeri">S3 Dalam Negeri</option>
+                <option value="S3 Luar Negeri">S3 Luar Negeri</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="periode" class="form-label">Periode</label>
+            <input type="text" class="form-control" id="periode" name="periode" placeholder="" required />
+          </div>
+          <div class="mb-3">
+            <label for="deskripsi" class="form-label">Deskripsi</label>
+            <textarea class="form-control" id="deskripsi" name="deskripsi" rows="5" required></textarea>
+          </div>      
+          <div class="mb-3">
+            <label for="sumber" class="form-label">Sumber</label>
+            <input type="text" class="form-control" id="sumber" name="sumber" placeholder="masukkan link sumber > https://sumber" pattern="https:\/\/.*" required />
+          </div>           
+          <div class="mb-3">
+            <label for="gambar" class="form-label">Pilih Gambar</label>
+            <input type="file" class="form-control" id="gambar" name="gambar" required />
+          </div>
+  
+          <button type="submit" class="btn btn-warning">Tambah Data Beasiswa</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- Form Add Data Beasiswa End -->
+  
+   <!-- Back to Top -->
+   <a href="#" class="btn btn-lg btn-dark btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+  </div>
+</div>
+</div>
